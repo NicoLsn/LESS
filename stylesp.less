@@ -1,0 +1,214 @@
+@colorPrimary: rgb(0, 116, 170);
+@colorSecondary: rgb(0, 145, 212);
+@colorButton: rgb(13, 166, 236);
+
+body {
+    margin: 0;
+    font-family: "Segoe UI",Arial,sans-serif;
+    h1 {
+        font-weight: 500;
+    }
+    header {
+        > div#header {
+            background-color: @colorPrimary;
+            width: 100%;
+            height: 75px;
+            > h1 {
+                color: white;
+                padding: 20px;
+            }
+        }
+        > ul#nav-main {
+            padding:  0 0 0 40px;
+            margin: 0;
+            list-style: none;
+            display: flex;
+            background-color: @colorSecondary;
+            > li {
+                color : white;
+                position: relative;
+
+                &:after {
+                    content : " ";
+                    width: 100%;
+                    position: absolute;
+                    bottom: 0;
+                    height: 4px;
+                    background-color: white;
+                    left: 0;
+                    display: none;
+                }
+                
+                &:hover {
+                    &:after { 
+                        display: block;                    
+                    }
+                }
+
+                > a {
+                    padding: 16px;
+                    display: block;
+                    cursor: pointer;
+                    color : #FFF;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+	
+	
+	
+
+    section {
+		/* transform:rotate(17deg); */
+		input[type=checkbox]:checked + label + ul{
+			list-style-type: none;margin:0 auto;
+			> li{	
+				position: absolute;	
+				margin: 150px;
+				height: 300px;
+				width: 250px;	
+				transform:rotate(20deg);
+				transition-property: transform;
+				transition-duration: 1s;
+				&:hover{
+					& ~ li{
+						transform:rotate(40deg);
+						transition-property: transform;
+						transition-duration: 1s;
+					}
+						
+				}				
+				&.facebook {
+					> a { 
+						width: 100%;
+						height: 100%;
+						background-color: #3578E5;}
+					transform:rotate(-50deg);transform-origin: bottom right;
+				}
+				&.twitter {
+					> a { 
+						width: 100%;
+						height: 100%;
+						background-color:#1da1f2;}
+					transform:rotate(-40deg);transform-origin: bottom right;
+				}
+				&.youtube {
+					> a { 
+						width: 100%;
+						height: 100%;
+						background-color: #ff0000;}
+					transform:rotate(-30deg);transform-origin: bottom right;
+				}
+				&.github {
+					> a { 
+						width: 100%;
+						height: 100%;
+						background-color: #24292e;}
+					transform:rotate(-20deg);transform-origin: bottom right;
+				}
+				&.pinterest {
+					> a { 
+						width: 100%;
+						height: 100%;
+						background-color: #e60023;}
+					transform:rotate(-10deg);transform-origin: bottom right;
+				}
+				&.google {
+					> a { 
+						width: 100%;
+						height: 100%;
+						background-color:#ea4335;}
+					transform:rotate(0deg);transform-origin: bottom right;
+				}
+				a {
+					display: flex;
+					flex-direction: column;
+					justify-content: space-evenly;
+					text-align: center;
+					border-radius: 7px;
+					text-decoration: none;
+					color: #e2dfdf;
+					&:hover {
+						color: white;
+					}
+				}
+			}
+		}
+		
+		input[type=checkbox]:not(:checked) + label + ul {
+			list-style-type: none;margin:0 auto;
+			> li {
+				position: absolute;
+				margin: 150px;
+				height: 300px;
+				width: 250px;
+				padding-left: 0px;
+				transition-property: padding-left;
+				transition-duration: 0.8s;
+				&:hover {
+					padding-left: 150px;
+					transition-property: padding-left;
+					transition-duration: 0.5s;
+				}
+				&.elmt {
+					border-radius: 60px;
+				}
+				&.facebook {
+					> a { 
+						width: 100%;
+						height: 100%;
+						background-color: #3578E5;}
+					margin-top: 0px;
+				}
+				&.twitter {
+					> a { 
+						width: 100%;
+						height: 100%;
+						background-color:#1da1f2;}
+					margin-top: 30px;
+				}
+				&.youtube {
+					> a { 
+						width: 100%;
+						height: 100%;
+						background-color: #ff0000;}
+					margin-top: 60px;
+				}
+				&.github {
+					> a { 
+						width: 100%;
+						height: 100%;
+						background-color: #24292e;}
+					margin-top: 90px;
+				}
+				&.pinterest {
+					> a { 
+						width: 100%;
+						height: 100%;
+						background-color: #e60023;}
+					margin-top: 120px;
+				}
+				&.google {
+					> a { 
+						width: 100%;
+						height: 100%;
+						background-color:#ea4335;}
+					margin-top: 150px;
+				}
+				a {
+					display: flex;
+					flex-direction: column;
+					justify-content: space-evenly;
+					text-align: center;
+					border-radius: 7px;
+					text-decoration: none;
+					color: #e2dfdf;
+					&:hover {
+						color: white;
+					}
+				}
+			}
+		}
+    }
+}

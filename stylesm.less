@@ -1,0 +1,127 @@
+@colorPrimary: rgb(0, 116, 170);
+@colorSecondary: rgb(0, 145, 212);
+@colorButton: rgb(13, 166, 236);
+
+body {
+    margin: 0;
+    font-family: "Segoe UI",Arial,sans-serif;
+    h1 {
+        font-weight: 500;
+    }
+    header {
+        > div#header {
+            background-color: @colorPrimary;
+            width: 100%;
+            height: 75px;
+            > h1 {
+                color: white;
+                padding: 20px;
+            }
+        }
+        > ul#nav-main {
+            padding:  0 0 0 40px;
+            margin: 0;
+            list-style: none;
+            display: flex;
+            background-color: @colorSecondary;
+            > li {
+                color : white;
+                position: relative;
+
+                &:after {
+                    content : " ";
+                    width: 100%;
+                    position: absolute;
+                    bottom: 0;
+                    height: 4px;
+                    background-color: white;
+                    left: 0;
+                    display: none;
+                }
+                
+                &:hover {
+                    &:after { 
+                        display: block;                    
+                    }
+                }
+
+                > a {
+                    padding: 16px;
+                    display: block;
+                    cursor: pointer;
+                    color : #FFF;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    
+    .card {
+        position: relative;
+        background-color: transparent;
+        width: 340px;
+        height: 300px;
+        perspective: 600px;
+        #checkbox {
+            position: absolute;
+            visibility: hidden;
+            &:checked {
+                & + .flip-card {
+                    transform: rotateY(180deg);
+                }
+            }
+        }
+        > .flip-card {
+            width: 100%;
+            height: 100%;
+            display: block;
+            position: relative;
+            transition: transform 1s;
+            transform-style: preserve-3d;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+            > .flip-card-front, .flip-card-back {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                backface-visibility: hidden;
+            }
+            > .flip-card-front {
+              background-color: #bbb;
+              color: black;
+            }
+
+            > .flip-card-back {
+              background-color: #2980b9;
+              color: white;
+              transform: rotateY(180deg);
+              .soleil {
+                display: flex;
+                justify-content: flex-end;
+                > div {
+                    margin: 16px;
+                    width: 100px;
+                    height: 100px;
+                    background: yellow;
+                    border-radius: 100%;
+                    animation: soleil 2s infinite alternate;
+                    box-shadow: 1px 1px 10px 4px #ffa726;
+                }
+              }
+              .desc {
+                padding: 0 28px;
+              }
+            }
+        }
+    }
+
+    @keyframes soleil {
+    from {
+        box-shadow: 1px 1px 10px 4px #ffa726;}
+    to {
+        box-shadow: 1px 1px 10px 10px #ffa726;}
+}
+
+}

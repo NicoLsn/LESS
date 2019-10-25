@@ -1,0 +1,100 @@
+@colorPrimary: rgb(0, 116, 170);
+@colorSecondary: rgb(0, 145, 212);
+@colorButton: rgb(13, 166, 236);
+
+body {
+    margin: 0;
+    font-family: "Segoe UI",Arial,sans-serif;
+    h1 {
+        font-weight: 500;
+    }
+    header {
+        > div#header {
+            background-color: @colorPrimary;
+            width: 100%;
+            height: 75px;
+            > h1 {
+                color: white;
+                padding: 20px;
+            }
+        }
+        > ul#nav-main {
+            padding:  0 0 0 40px;
+            margin: 0;
+            list-style: none;
+            display: flex;
+            background-color: @colorSecondary;
+            > li {
+                color : white;
+                position: relative;
+
+                &:after {
+                    content : " ";
+                    width: 100%;
+                    position: absolute;
+                    bottom: 0;
+                    height: 4px;
+                    background-color: white;
+                    left: 0;
+                    display: none;
+                }
+                
+                &:hover {
+                    &:after { 
+                        display: block;                    
+                    }
+                }
+
+                > a {
+                    padding: 16px;
+                    display: block;
+                    cursor: pointer;
+                    color : #FFF;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    section#list-article {
+        margin-top: 16px;
+        > article {
+            width: 50%;
+            border-radius: 3px;
+            box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.15);
+            margin: 0 auto 16px auto;
+            &#desc {
+                > div {
+                    padding: 16px;
+                    > h1 {
+                        margin: 0;
+                    }
+                }
+            }
+            &.article{
+                display: flex;
+                flex-direction: row;
+                > img {
+                    width: 150px;
+                    height: 150px;
+                }
+                > div {
+                    padding: 8px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    width: 100%;
+                    > h1 {
+                        margin: 0;
+                    }
+                    > a {
+                        margin-left: auto;
+                        text-decoration: none;
+                        text-transform: none;
+                        color: @colorButton;
+                    }
+    
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,309 @@
+@colorPrimary: rgb(0, 116, 170);
+@colorSecondary: rgb(0, 145, 212);
+@colorButton: rgb(13, 160, 236);
+
+body {
+    margin: 0;
+    font-family: "Segoe UI",Arial,sans-serif;
+    background-color: black;
+    h1 {
+        font-weight: 500;
+        margin: 0;
+    }
+    header {
+        > div#header {
+            background-color: @colorPrimary;
+            width: 100%;
+            height: 75px;
+            > h1 {
+                color: white;
+                padding: 20px;
+            }
+        }
+        > ul#nav-main {
+            padding:  0 0 0 40px;
+            margin: 0;
+            list-style: none;
+            display: flex;
+            background-color: @colorSecondary;
+            > li {
+                color : white;
+                position: relative;
+
+                &:after {
+                    content : " ";
+                    width: 100%;
+                    position: absolute;
+                    bottom: 0;
+                    height: 4px;
+                    background-color: white;
+                    left: 0;
+                    display: none;
+                }
+                
+                &:hover {
+                    &:after { 
+                        display: block;                    
+                    }
+                }
+
+                > a {
+                    padding: 16px;
+                    display: block;
+                    cursor: pointer;
+                    color : #FFF;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    
+    .number {
+        margin: 100px;
+        height: 100px;
+        position: relative;
+        width: 75px;
+        background-color: black;
+        > div {
+            opacity: 0;
+            position: absolute;
+            background-color: white;
+        }
+        .top {
+            top: 0;
+            height: 4px;
+            width: 100%;
+            animation: toptop 1s infinite;
+        }
+        .top-left {
+            top: 0;
+            left: 0;
+            height: 50px;
+            width: 4px;
+            animation: topleft 1s infinite;
+        }
+        .top-right {
+            top: 0;
+            right: 0;
+            height: 50px;
+            width: 4px;
+            animation: topright 1s infinite;
+        }
+        .middle {
+            top: 48%;
+            height: 4px;
+            width: 100%;
+            animation: middlemiddle 1s infinite;
+        }
+        .bottom {
+            bottom: 0;
+            height: 4px;
+            width: 100%;
+            animation: bottombottom 1s infinite;
+        }
+        .bottom-left {
+            bottom: 0;
+            left: 0;
+            height: 50px;
+            width: 4px;
+            animation: bottomleft 1s infinite;
+        }
+        .bottom-right {
+            bottom: 0;
+            right: 0;
+            height: 50px;
+            width: 4px;
+            animation: bottomright 1s infinite;
+        }
+        
+    }
+
+    @keyframes toptop {
+      from {
+        opacity: 100;
+      }
+      9.999% {opacity: 100}
+      10% {
+        opacity: 0;
+      }
+      19.999% {opacity: 0}
+      20% {
+        opacity: 100;
+      }
+      39.999% {opacity: 100}
+      40% {
+        opacity: 0;
+      }
+      49.999% {opacity: 0}
+      50% {
+        opacity: 100;
+      }
+      to {
+        opacity: 100;
+      }
+    }
+
+
+    @keyframes topleft {
+      from {
+        opacity: 100;
+      }
+      9.999% {opacity: 100}
+      10% {
+        opacity: 0;
+      }
+      39.999% {opacity: 0}
+      40% {
+        opacity: 100;
+      }
+      69.999% {opacity: 100}
+      70% {
+        opacity: 0;
+      }
+      79.999% {opacity: 0}
+      80% {
+        opacity: 100;
+      }
+      to {
+        opacity: 100;
+      }
+    }
+
+
+    @keyframes topright {
+      from {
+        opacity: 100;
+      }
+      49.999% {opacity: 100}
+      50% {
+        opacity: 0;
+      }
+      69.999% {opacity: 0}
+      70% {
+        opacity: 100;
+      }
+      to {
+        opacity: 100;
+      }
+    }
+
+    @keyframes middlemiddle {
+      from {
+        opacity: 0;
+      }
+      19.999% {opacity: 0}
+      20% {
+        opacity: 100;
+      }
+      69.999% {opacity: 100}
+      70% {
+        opacity: 0;
+      }
+      79.999% {opacity: 0}
+      80% {
+        opacity: 100;
+      }
+      to {
+        opacity: 100;
+      }
+    }
+
+
+
+    @keyframes bottomleft {
+      from {
+        opacity: 100;
+      }
+
+      9.999% {opacity: 100}
+      10% {
+        opacity: 0;
+      }
+      19.999% {opacity: 0}
+      20% {
+        opacity: 100;
+      }
+      29.999% {opacity: 100}
+      30% {
+        opacity: 0;
+      }
+      59.999% {opacity: 0}
+      60% {
+        opacity: 100;
+      }
+      69.999% {opacity: 100}
+      70% {
+        opacity: 0;
+      }
+      79.999% {opacity: 0}
+      80% {
+        opacity: 100;
+      }
+      89.999% {opacity: 100}
+      90% {
+        opacity: 0;
+      }
+      to {
+        opacity: 0;
+      }
+    }
+
+
+
+    @keyframes bottomright {
+      from {
+        opacity: 100;
+      }
+      19.999% {opacity: 100}
+      20% {
+        opacity: 0;
+      }
+      29.999% {opacity: 0}
+      30% {
+        opacity: 100;
+      }
+      79.999% {opacity: 100}
+      80% {
+        opacity: 100;
+      }
+      to {
+        opacity: 100;
+      }
+    }
+
+
+
+    @keyframes bottombottom {
+      from {
+        opacity: 100;
+      }
+      9.999% {opacity: 100}
+      10% {
+        opacity: 0;
+      }
+      19.999% {opacity: 0}
+      20% {
+        opacity: 100;
+      }
+      39.999% {opacity: 100}
+      40% {
+        opacity: 0;
+      }
+      49.999% {opacity: 0}
+      50% {
+        opacity: 100;
+      }
+      69.999% {opacity: 100}
+      70% {
+        opacity: 0;
+      }
+      79.999% {opacity: 0}
+      80% {
+        opacity: 100;
+      }
+      to {
+        opacity: 100;
+      }
+    }
+
+}

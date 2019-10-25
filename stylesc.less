@@ -1,0 +1,94 @@
+@colorPrimary: rgb(0, 116, 170);
+@colorSecondary: rgb(0, 145, 212);
+@colorButton: rgb(13, 166, 236);
+
+body {
+	counter-reset: count;
+    margin: 0;
+    font-family: "Segoe UI",Arial,sans-serif;
+	
+	> section {
+		counter-reset: res;
+		input[type=checkbox]#checkbox1:checked {
+			counter-increment: res 128;
+		}
+		input[type=checkbox]#checkbox2:checked {
+			counter-increment: res 20;
+		}
+		input[type=checkbox]#checkbox3:checked {
+			counter-increment: res -6;
+		}
+		input[type=checkbox]#checkbox4:checked {
+			counter-increment: res -40;
+		}
+		input[type=checkbox]#checkbox5:checked {
+			counter-increment: res 10;
+		}
+		input[type=checkbox]#checkbox6:checked {
+			counter-increment: res -10;
+		}
+		.resultat::before{
+			content: "resultat: " counter(res);
+		}
+		input[type=checkbox]#checkbox1:checked ~ input[type=checkbox]#checkbox2:not(:checked)  ~ input[type=checkbox]#checkbox3:checked  ~ input[type=checkbox]#checkbox4:checked  ~ input[type=checkbox]#checkbox5:not(:checked)  ~ input[type=checkbox]#checkbox6:checked ~ .resultat::after{
+			color: blue;
+			content: " Victoire!";
+		}
+	}
+    h1 {
+        font-weight: 500;
+    }
+    header {
+        > div#header {
+            background-color: @colorPrimary;
+            width: 100%;
+            height: 75px;
+            > h1 {
+                color: white;
+                padding: 20px;
+            }
+        }
+        > ul#nav-main {
+            padding:  0 0 0 40px;
+            margin: 0;
+            list-style: none;
+            display: flex;
+            background-color: @colorSecondary;
+            > li {
+                color : white;
+                position: relative;
+
+                &:after {
+                    content : " ";
+                    width: 100%;
+                    position: absolute;
+                    bottom: 0;
+                    height: 4px;
+                    background-color: white;
+                    left: 0;
+                    display: none;
+                }
+                
+                &:hover {
+                    &:after { 
+                        display: block;                    
+                    }
+                }
+
+                > a {
+                    padding: 16px;
+                    display: block;
+                    cursor: pointer;
+                    color : #FFF;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+	
+	
+	
+	
+	
+}
